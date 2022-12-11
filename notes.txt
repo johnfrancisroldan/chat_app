@@ -1,0 +1,56 @@
+===========================================
+===============E=M=O=J=I===================
+===========================================
+=== ✔️ = Done                          ====
+=== 📃 = Document/Task/Quest/Project   ====
+=== 📌 = Todo                          ====
+=== 📍  = Sub-Todo                      ====
+=== 🔸 = Sub-Sub-Todo                  ====
+=== 🛠️ = Working/Under-construction    ====
+=== 📅 = Schedule/Deadline/Date        ====
+=== 📦 = Features                      ====
+=== 🧷 = Hold                          ====
+=== 🌈 = Designed                      ====
+===========================================
+===========================================
+
+📃Project: simple chat app
+📅Deadline: December 9, 2022
+📦Features:
+    📌 Database Schema
+    📌 Essential CRUD operations
+        ✔️ Create 
+        ✔️ Read 
+        ✔️ Update 
+        ✔️ Delete 
+    ✔️ Have a client and a server module
+        ✔️ View File 
+        ✔️ Server File 
+    📌 Events and activities should be in real time
+        📍 Notifications
+        📍 chats
+        📍 others
+    🛠️	Login and account functionality
+        🌈 Login 
+        🌈 Register 
+        ✔️ Edit Account 
+        ✔️ Delete Account 
+        📍 Validations:
+            🔸 Login
+            🔸 Register
+            🔸 Edit Account 
+            🔸 Delete Account
+    📌	Contact list
+    📌	Chat history
+    📌	Contact headers and options
+    📌	Chat composer
+    📌	Notification
+    📌	Optional:
+        📍	File upload
+        📍	Avatar
+        📍	Emojis
+        📍	Image viewer
+        📍	WYSIWYG editor
+        📍	Online status
+        📍	Conference/Group Chat
+
