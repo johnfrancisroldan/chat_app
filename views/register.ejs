@@ -1,0 +1,104 @@
+<!-- INCLUDE: Header -->
+<%-include('include/__header') %>
+<!-- /INCLUDE: Header -->
+
+<!-- divContainer -->
+<div id="container">
+    <!-- divRow -->
+    <div class="row d-flex justify-content-center mx-5 my-5">
+        <!-- divCol -->
+        <div class="col-md-auto ">
+            <!-- divCard -->
+            <div class="card ">
+                <!-- divCardBody -->
+                <h4 class="card-header d-flex justify-content-center">Register Form</h4>
+                <div class="card-body">
+                    <!-- form: Register Form -->
+                    <form action="/api/register" method="post" id='registerForm'>
+                        <!-- divContainer2 -->
+                        <div class="container g-3">
+
+                            <div class="row row-cols-2 d-flex">
+                                <!-- Textbox: First Name -->
+                                <div class="col-md-auto form-group ">
+                                    <label for="txtfn" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="txtFn" name='first_name'
+                                        placeholder="First Name" required>
+                                </div>
+
+                                <!-- Textbox: Last Name -->
+                                <div class="col-md-auto form-group">
+                                    <label for="txtln" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="txtLn" name='last_name'
+                                        placeholder="Last Name" required>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row row-cols-2 d-flex">
+                                <!-- Textbox: Email -->
+                                <div class="col-md-auto form-group">
+                                    <label for="txtemail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="txtEmail" name='email'
+                                        placeholder="Email" required>
+                                </div>
+
+                                <!-- Textbox: Password -->
+                                <div class="col-md-auto form-group">
+                                    <label for="txtln" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="txtPass" name='password'
+                                        placeholder="Password" required>
+                                </div>
+                            </div>
+
+                            <div class="row row-cols-2 g-3">
+                                <!-- Textbox: Phone -->
+                                <div class="col-md-auto form-group">
+                                    <label for="txtphone" class="form-label">Phone</label>
+                                    <input type="text" class="form-control" id="txtPhone" name="phone_num"
+                                        placeholder="Cellphone number" required>
+                                </div>
+
+                                <!-- Textbox: Age-->
+                                <div class="col-md-auto form-group">
+                                    <label for="txtage" class="form-label">Age</label>
+                                    <input type="number" class="form-control" id="txtAge" name="age" min="12" max="100"
+                                        placeholder="Age" required>
+                                </div>
+
+                                <!-- Select Dropdown: Gender -->
+                                <div class="col-md-auto form-group">
+                                    <label for="ddlgender" class="form-label">Gender</label>
+                                    <select class="btn btn-sm form-select" id='sdGender' name='gender' required>
+                                        <option value="Male" selected>Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </div>
+
+                                <!-- /divContainer2 -->
+                            </div>
+                        </div>
+                        <!-- divCardBody -->
+                </div>
+                <!-- divCardFooter -->
+                <div class="card-footer d-flex justify-content-end">
+                    <!-- Button: Save -->
+                    <button type="submit" class="btn btn-success" id='btnSave'>Save</button>
+
+                    <!-- /form: Register Form -->
+                    </form>
+                    <!-- /divCardFooter -->
+                </div>
+                <!-- /divCard -->
+            </div>
+            <!-- /divCol-->
+        </div>
+        <!-- /divRow -->
+    </div>
+    <!-- /divContainer -->
+</div>
+
+<!-- INCLUDE: Footer -->
+<%-include('include/__footer') %>
+<!-- /INCLUDE: Footer -->

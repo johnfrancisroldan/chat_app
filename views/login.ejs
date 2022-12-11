@@ -1,0 +1,59 @@
+<!-- INCLUDE: Header -->
+<%-include('include/__header') %>
+<!-- /INCLUDE: Header -->
+
+<!-- divContainer -->
+<div id="container">
+    <!-- divRow -->
+    <div class="row d-flex justify-content-center align-items-center mx-5 my-5">
+        <!-- divCol -->
+        <div class="col-md-auto ">
+            <!-- divCard -->
+            <div class="card ">
+                <h4 class="card-header d-flex justify-content-center">Login</h4>
+                <!-- divCardBody -->
+                <div class="card-body d-flex">
+                    <!-- form: login Form -->
+                    <form action="javascript:void(0)" id='frmcu' enctype="multipart/form-data">
+                        <div class="container g-3">
+                            <!-- Textbox: Email -->
+                            <div class="row form-group d-flex flex-column">
+                                <div class="col-md-auto form-group">
+                                    <!-- User: Email -->
+                                    <label for="txtemail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="txtEmail" name='email'
+                                        placeholder="Email" required>
+                                </div>
+                            </div>
+                            <!-- Textbox: Password -->
+                            <div class="row form-group d-flex flex-column">
+                                <div class="col-md-auto form-group">
+                                    <label for="txtln" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="txtPass" name='password'
+                                        placeholder="Password" required>
+                                </div>
+                                <!-- Sign up link -->
+                                <p>Don't have an account yet? <a href="/register"><b>Sign Up Here</b></a></p>
+                            </div>
+                        </div>
+                        <!-- divCardBody -->
+                </div>
+                <!-- divCardFooter -->
+                <div class="card-footer d-flex justify-content-center">
+                    <button type="submit" class="btn btn-outline-success" id='btnLogin'>Login</button>
+                    <!-- /form: Login Form -->
+                    </form>
+                    <!-- /divCardFooter -->
+                </div>
+                <!-- /divCard -->
+            </div>
+            <!-- /divCol-->
+        </div>
+        <!-- /divRow -->
+    </div>
+    <!-- /divContainer -->
+</div>
+
+<!-- INCLUDE: Footer -->
+<%-include('include/__footer') %>
+<!-- /INCLUDE: Footer -->

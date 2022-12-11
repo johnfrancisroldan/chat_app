@@ -1,0 +1,334 @@
+<!-- INCLUDE: Header -->
+<%-include('include/__header') %>
+<!-- /INCLUDE: Header -->
+
+
+<!-- divContainer -->
+<div class="container-sm mx-5 my-5">
+    <!-- divCard -->
+    <div class="card ">
+        <!-- divHeader -->
+        <div class="card-header">
+            <!-- divRow -->
+            <div class="row row-cols-2 d-flex justify-content-between">
+                <!-- User pic & User Name -->
+                <div class="col col-sm-auto">
+                    <div class="hstack gap-3 ">
+                        <div>
+                            <img src="img/users/m_user1.jpg" class="rounded-circle img-thumbnail" width="60" height="60"
+                                alt="Cinque Terre">
+                        </div>
+                        <div class="medium text-black">
+                            <p class="mb-0 small text-truncate"> Hi, General User</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- divEvents: Add, Notification, Menu -->
+                <div class="col col-md-auto">
+                    <!-- Event: add -->
+                    <!-- Modal Trigger: btnAddIcon -->
+                    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        <ion-icon name="add-outline" size="large"></ion-icon>
+                    </button>
+
+                    <!-- divModal: eventAdd -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <!-- divModalDialog -->
+                        <div class="modal-dialog">
+                            <!-- divModalContent -->
+                            <div class="modal-content">
+                                <!-- divModalHeader -->
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                    <!-- /divModalHeader -->
+                                </div>
+                                <!-- divModalBody -->
+                                <div class="modal-body">
+                                    <!-- ulListGroup -->
+                                    <ul class="list-group list-group-flush">
+                                        <!-- liFirstUser -->
+                                        <li class="list-group-item">
+                                            <!-- divHStack -->
+                                            <div class="hstack gap-3 ">
+                                                <!-- Profile Pic -->
+                                                <div>
+                                                    <button type="button" class="btn btn-sm" data-bs-toggle="popover"
+                                                        title="Popover title"
+                                                        data-bs-content="And here's some amazing content. It's very engaging. Right?"><img
+                                                            class="rounded-circle" src="img/users/m_user1.jpg"
+                                                            width="50" height="50" alt=""></button>
+
+                                                </div>
+
+                                                <!-- User Name -->
+                                                <div class="mediumtext-black">
+                                                    <p class="mb-0 small text-truncate">Name</p>
+                                                </div>
+
+                                                <!-- UserAdd -->
+                                                <div class="ms-auto">
+                                                    <button type="button" class="btn btn-sm btn-success">
+                                                        <ion-icon name="add-circle-outline" size="large"></ion-icon>
+                                                    </button>
+                                                </div>
+                                                <!-- /divHStack -->
+                                            </div>
+                                             <!-- /liFirstUser -->
+                                        </li>
+                                        
+
+                                        <!-- Second USER -->
+                                        <li class="list-group-item">
+                                            <div class="hstack gap-3 ">
+                                                <div>
+                                                    <button type="button" class="btn btn-sm" data-bs-toggle="popover"
+                                                        title="Popover title"
+                                                        data-bs-content="And here's some amazing content. It's very engaging. Right?"><img
+                                                            class="rounded-circle" src="img/users/m_user1.jpg"
+                                                            width="50" height="50" alt=""></button>
+                                                </div>
+                                                <div class="mediumtext-black">
+                                                    <p class="mb-0 small text-truncate">Name</p>
+                                                </div>
+
+                                                <div class="ms-auto">
+                                                    <button type="button" class="btn btn-sm btn-success">
+                                                        <ion-icon name="person-add" size="large"></ion-icon>
+                                                    </button>
+
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">A third item</li>
+                                        <li class="list-group-item">A fourth item</li>
+                                        <li class="list-group-item">And a fifth one</li>
+                                    </ul>
+                                    <!-- /divModalBody -->
+                                </div>
+
+                                <!-- divModalFooter/ -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                                <!-- /divModalContent -->
+                            </div>
+                          <!-- /divModalDialog -->  
+                        </div>
+                        <!-- /divModal: eventAdd -->
+                    </div>
+
+                    <!-- btnNotification: Popover -->
+                    <button type="button" class="btn btn-sm" data-bs-toggle="popover" title="Popover title"
+                        data-bs-content="And here's some amazing content. It's very engaging. Right?">
+                        <ion-icon name="notifications-outline" size="large"></ion-icon>
+                    </button>
+
+                    <!-- divBtnGroup: Menu Bar -->
+                    <div class="btn-group">
+                        <!-- btnMenuBarIcon -->
+                        <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <ion-icon name="menu-outline" size="large"></ion-icon>
+                        </button>
+
+                        <!--ulDropDownMenu  -->
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="#">Account</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-red" href="#">Log-Out</a></li>
+                        </ul>
+                         <!-- /divBtnGroup: Menu Bar -->
+                    </div>
+                <!-- /divEvents: Add, Notification, Menu -->
+                </div>
+                <!-- /divRow -->
+            </div>
+            <!-- /divHeader -->
+        </div>
+
+        <!-- divCardBody: listContactsPane -->
+        <div class="card-body">
+            <!-- divRow2 -->
+            <div class="row row-cols-2 d-flex g-2">
+                <!-- divCol2 -->
+                <div class="col col-md-5 border border-danger">
+                    <!-- divCard: listContactsPane-->
+                    <div class="card" style="height: 500px;">
+                        <!-- divCardBody:  listContactsPane-->
+                        <div class="card-body text-black bg-light g-2 h-200">
+                            <!-- divListGroupTab-->
+                            <div class="list-group" id="list-tab" role="tablist">
+                                <!-- Loop to all users -->
+                                <% for(let index = 0; index < users.length; index++){%>
+                                    <a class="list-group-item list-group-item-action" id="list-user-list<%= index%>" data-bs-toggle="list" href="#list-user<%= index%>" role="tab" aria-controls="list-user<%= index%>">
+                                                                            
+                                    <div class="hstack gap-3 ">
+                                        <!-- divUserProfile -->
+                                        <div>
+                                            <img class="rounded-circle" src="img/users/m_user1.jpg" width="50"
+                                                height="50" alt="">
+                                        </div>
+    
+                                        <!-- divUserName -->
+                                        <div class="mediumtext-black">
+                                            <p class="mb-0 small text-truncate"><%= users[index].first_name + " "+users[index].last_name%></p>
+                                        </div>
+    
+                                        <!-- divOnlineIndicator -->
+                                        <div class="ms-auto">
+                                            <ion-icon name="ellipse-sharp" size="small" style="color: green;">
+                                            </ion-icon>
+                                        </div>
+                                        <!-- divFriendInfo -->
+                                    </div>
+                                    <!-- /aListGroup: Friend #01 -->
+                                </a>
+                                <% } %>
+
+
+                               
+                            </div>
+                            
+                            
+                            <!-- /divCardBody:  listContactsPane-->
+                        </div>
+                         <!-- /divCard: listContactsPane-->
+                    </div>
+                    <!-- /divCol2 -->
+                </div>
+
+                <!-- divCol: MessageHistoryPane-->
+                <div class="col col-md-7 border border-primary">
+                    <div class="card text-black bg-gray" style="height: 500px;">
+                        <div class="card-body"">
+                            <div class="tab-content" id="nav-tabContent">
+                                <!-- Loop to all users -->
+                                <% for(let index = 0; index < users.length; index++){%>
+                                    <div class="tab-pane fade show" id="list-user<%= index%>" role="tabpanel" aria-labelledby="list-user-list<%= index%>">
+                                        <div class="card ">
+                                            <!-- divCardBody -->
+                                            <div class="card-header d-flex justify-content-between">
+                                                <h4>USER INFO</h4>
+                                                <button class="btn btn-sm btn-danger" id='btnDelete' value="<%= users[index]._id%>">Delete</button>
+                                            </div>
+                                            
+                                            <div class="card-body">
+                                                <!-- form: Update Form -->
+                                                <form method="post" id='updateForm'>
+                                                    <!-- divContainer2 -->
+                                                    <div class="container g-3">
+                                                        <input type="text" class="form-control" id="txtFn" name='id' value="<%= users[index]._id%>" hidden>
+                                                        <div class="row row-cols-2 d-flex">
+                                                            <!-- Textbox: First Name -->
+                                                            <div class="col-md-auto form-group ">
+                                                                <label for="txtfn" class="form-label">First Name</label>
+                                                                <input type="text" class="form-control" id="txtFn" name='first_name' value="<%= users[index].first_name%>"
+                                                                placeholder="First Name" required>
+                                                            </div>
+                                    
+                                                            <!-- Textbox: Last Name -->
+                                                            <div class="col-md-auto form-group">
+                                                                <label for="txtln" class="form-label">Last Name</label>
+                                                                <input type="text" class="form-control" id="txtLn" name='last_name' value="<%= users[index].last_name%>" placeholder="Last Name"
+                                                                    required>
+                                                            </div>
+                                                        </div>
+                                            
+                                                        <div class="row row-cols-2 d-flex">
+                                                            <!-- Textbox: Email -->
+                                                            <div class="col-md-auto form-group">
+                                                                <label for="txtemail" class="form-label">Email</label>
+                                                                <input type="email" class="form-control" id="txtEmail" name='email' value="<%= users[index].email%>"
+                                                                placeholder="Email"
+                                                                    required>
+                                                            </div>
+                                    
+                                                            <!-- Textbox: Password -->
+                                                            <div class="col-md-auto form-group">
+                                                                <label for="txtln" class="form-label">Password</label>
+                                                                <input type="password" class="form-control" id="txtPass" name='password' value="<%= users[index].password%>"
+                                                                    placeholder="Password" required>
+                                                            </div>
+                                                        </div>
+                                    
+                                                        <div class="row row-cols-2 g-3">
+                                                            <!-- Textbox: Phone -->
+                                                            <div class="col-md-auto form-group">
+                                                                <label for="txtphone" class="form-label">Phone</label>
+                                                                <input type="text" class="form-control" id="txtPhone" name="phone_num" value="<%= users[index].phone_num%>"
+                                                                    placeholder="Cellphone number" required>
+                                                            </div>
+                                    
+                                                            <!-- Textbox: Age-->
+                                                            <div class="col-md-auto form-group">
+                                                                <label for="txtage" class="form-label">Age</label>
+                                                                <input type="number" class="form-control" id="txtAge" name="age" min="12" max="100" value="<%= users[index].age%>"
+                                                                    placeholder="Age" required>
+                                                            </div>
+                                    
+                                                            <!-- Select Dropdown: Gender -->
+                                                            <div class="col-md-auto form-group">
+                                                                <label for="ddlgender" class="form-label">Gender</label>
+                                                                <select class="btn btn-sm form-select" id='sdGender' name='gender' required>
+                                                                    <option value="Male" <%=users[index].gender==='Male' ? 'selected' : '' %>>Male</option>
+                                                                    <option value="Female" <%=users[index].gender==='Female' ? 'selected' : '' %>>Female</option>
+                                                                </select>
+                                                            </div>
+                                    
+                                                            <!-- /divContainer2 -->
+                                                        </div>
+                                                    </div>
+                                                    <!-- divCardBody -->
+                                            </div>
+                                            <!-- divCardFooter -->
+                                            <div class="card-footer d-flex justify-content-end">
+                                                <!-- Button: Save -->
+                                                <button type="submit" class="btn btn-success" id='btnUpdate'>Update</button>
+                                    
+                                                <!-- /form: Update Form -->
+                                                </form>
+                                                <!-- /divCardFooter -->
+                                            </div>
+                                            <!-- /divCard -->
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                <% } %>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!-- /divCol: MessageHistoryPane-->
+                </div>
+                 <!-- divRow2 -->
+            </div>
+
+        </div>
+        <!-- /divCard -->
+    </div>
+    <!-- /divContainer -->
+</div>
+
+
+
+<!-- <script>
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+    })
+
+</script> -->
+
+<!-- INCLUDE: Footer -->
+<%-include('include/__footer') %>
+    <!-- /INCLUDE: Footer -->
