@@ -1,13 +1,14 @@
-/* ====== IMPORT PACKAGES ====== */
-import express from 'express'; // Import Express Module
-import dotenv from 'dotenv';  // Import dotenv Module 
-import morgan from 'morgan';  // Import morgan Module
-import bodyParser from 'body-parser';
-import path from 'path';
+/* ====== IMPORT MODULES ====== */
+import express from 'express'; 
+import dotenv from 'dotenv';  
+import morgan from 'morgan'; 
+import expressEjsLayouts from 'express-ejs-layouts'; 
+import path from 'path'; 
 import { fileURLToPath } from 'url';
 
 /* ====== IMPORT USER ROUTERS ====== */
-import userRoutes from "./server/routes/userRoutes.js"
+import userRoutes from "./server/routes/userRoutes.js";
+import userAuth from "./server/routes/userAuthRoutes.js";
 
 /* ====== IMPORT MONGODB CONNECTION ====== */
 import connectDB from './server/database/connection.js';
@@ -32,23 +33,30 @@ app.use(morgan('tiny'));
 connectDB();
 
 // Body Parser
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: false}));
 
 // parse application/json
-app.use(bodyParser.json());
-
-
-// Set Engine for views
-app.set('view engine', "ejs"); 
+app.use(express.json());
 
 // Create Shortcut call for calling directory name
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Load Assets Files and Create shortcut in paths
-app.use("/css", express.static(path.join(__dirname, 'assets/css')));
-app.use("/img", express.static(path.join(__dirname, 'assets/img')));
-app.use("/js", express.static(path.join(__dirname, 'assets/js')));
+
+// Set Engine for views
+app.set('view engine', "ejs"); 
+
+// Set Views location
+app.set('views', path.join(__dirname, 'views'));
+
+app.set('layout', 'layouts/layout');
+
+// To create a layout file to all html
+app.use(expressEjsLayouts);
+
+// Setting the public/assets files(css/img/js)
+app.use(express.static(path.join(__dirname, '/assets')));
+
 
 
 /* ====== PAGES ====== */
@@ -56,6 +64,8 @@ app.use("/js", express.static(path.join(__dirname, 'assets/js')));
 // User Pages
 app.use('/', userRoutes);
 
+// User Authentication Pages
+app.use('/auth', userAuth);
 
 
 // Make our application listen for incoming request

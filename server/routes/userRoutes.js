@@ -10,29 +10,26 @@ import * as userAPI  from "../controller/userCtl.js";
 const router = express.Router();
 
 
-/* ====== PAGES ====== */
-// Login Page
-router.get("/login", loginPage);
-
-// Register Page
-router.get("/register", registerPage);
-
-// Home Page
-router.get('/', homePage);
+router.get("/", (req, res) => {
+    res.render('index');
+});
 
 
-/* ====== API's ====== */
-// Create Users Route
-router.post('/api/register', userAPI.registerUser);
+// /* ====== PAGES ====== */
 
+// // Home Page
+// router.get('/', homePage);
+
+
+// /* ====== API's ====== */
 // Find Users Route
 router.get('/api/view_user', userAPI.viewUsers);
 
-// Update Users Route
-router.put('/api/updateUser/:id', userAPI.updateUser);
+// // Update Users Route
+// router.put('/api/updateUser/:id', userAPI.updateUser);
 
-// Delete Users Route
-router.delete('/api/deleteUser/:id', userAPI.deleteUser);
+// // Delete Users Route
+// router.delete('/api/deleteUser/:id', userAPI.deleteUser);
 
 
 // Export router in our app.js

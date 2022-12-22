@@ -8,38 +8,31 @@
 import tblUser from '../model/userModel.js';
 
 // Controller: Register User 
-export const registerUser = (req,res) =>{
+export const registerUser = async (req,res) =>{
    // Validatation
-   if(!req.body){
-      res.status(400).send({message: "There is no Data to fetch"} )
-      return;
-   };
-   console.log(req.body);
+   try {
+      // Fetch newUserData for tblUser
+      const user = new tblUser({
+         first_name: req.body.first_name , 
+         last_name: req.body.last_name,
+         email: req.body.email ,
+         password: req.body.password ,
+         phone_num: req.body.phone_num ,
+         age: req.body.age ,
+         gender: req.body.gender
+      });
 
-   // Fetch newUserData for tblUser
-   const newUserData = new tblUser({
-      first_name: req.body.first_name , 
-      last_name: req.body.last_name,
-      email: req.body.email ,
-      password: req.body.password ,
-      phone_num: req.body.phone_num ,
-      age: req.body.age ,
-      gender: req.body.gender
-   });
+      // Save New User Data
+      const newUser = await user.save()
 
-   // Save New User Data
-   newUserData
-      .save(newUserData) // Store NewUserData
-      .then(data=>{
-         // Callback
-         res.redirect('/register');
+      res.redirect('/auth/login');
+
+   } catch{
+      res.status(500).send({
+         message: err.message || 'Error found: Storing New user'
       })
-      .catch(err=>{
-         // Catch error
-         res.status(500).send({
-            message: err.message || 'Error found: Storing New user'
-         })
-      })
+
+   }
    
 }
 

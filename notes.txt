@@ -15,10 +15,10 @@
 ===========================================
 
 📃Project: simple chat app
-📅Deadline: December 9, 2022
+📅Deadline: December 9, 2022 (2 Files Complete)  FAILED
 📦Features:
     📌 Database Schema
-    📌 Essential CRUD operations
+    ✔️ Essential CRUD operations
         ✔️ Create 
         ✔️ Read 
         ✔️ Update 
@@ -40,7 +40,7 @@
             🔸 Register
             🔸 Edit Account 
             🔸 Delete Account
-    📌	Contact list
+    📌	Contact list 
     📌	Chat history
     📌	Contact headers and options
     📌	Chat composer
@@ -54,3 +54,4 @@
         📍	Online status
         📍	Conference/Group Chat
 
+<%- body %> # this is just going to include every html

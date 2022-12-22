@@ -9,12 +9,12 @@ const baseUrl = 'http://localhost:8080';
 
 // Login page 
 export const loginPage = (req, res) =>{
-    res.render('login');
+    res.render('userAuth/login');
 }
 
 // Register Page 
 export const registerPage =  (req,res) =>{
-    res.render('register');
+    res.render('userAuth/register');
 };
 
 // Home Page
