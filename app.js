@@ -6,12 +6,22 @@ import expressEjsLayouts from 'express-ejs-layouts';
 import path from 'path'; 
 import { fileURLToPath } from 'url';
 
+// User Authentication modules
+import passport from 'passport';
+import session from 'express-session';
+import flash from 'express-flash';
+
+/* ====== IMPORT CONFIGURATION ====== */
+import initializeUser from './server/config/passport-config.js';
+
 /* ====== IMPORT USER ROUTERS ====== */
-import userRoutes from "./server/routes/userRoutes.js";
-import userAuth from "./server/routes/userAuthRoutes.js";
+import userRoutes from "./server/routes/user-route.js";
+import userAuth from "./server/routes/userAuth-route.js";
 
 /* ====== IMPORT MONGODB CONNECTION ====== */
 import connectDB from './server/database/connection.js';
+
+
 
 /* ====== INITIALIZE EXPRESS APP ====== */
 const app = express();
@@ -54,8 +64,8 @@ app.set('layout', 'layouts/layout');
 // To create a layout file to all html
 app.use(expressEjsLayouts);
 
-// Setting the public/assets files(css/img/js)
-app.use(express.static(path.join(__dirname, '/assets')));
+// Setting the public files(css/img/js)
+app.use(express.static(path.join(__dirname, '/public')));
 
 
 

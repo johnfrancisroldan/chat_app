@@ -5,7 +5,7 @@
 */
 
 /* ====== IMPORT USER DATABASE ====== */
-import tblUser from '../model/userModel.js';
+import tblUser from '../model/user-model.js';
 
 // Controller: Register User 
 export const registerUser = async (req,res) =>{
@@ -25,7 +25,7 @@ export const registerUser = async (req,res) =>{
       // Save New User Data
       const newUser = await user.save()
 
-      res.redirect('/auth/login');
+      res.redirect('/login');
 
    } catch{
       res.status(500).send({

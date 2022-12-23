@@ -1,3 +1,4 @@
 config.env
 node_modules
 test_response.http
+notes.txt

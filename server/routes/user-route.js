@@ -1,10 +1,10 @@
 import express from "express";   // Import Express Module
 
 // Import User Pages Services Method
-import { loginPage, registerPage, homePage } from "../services/userPages.js";
+import { loginPage, registerPage, homePage } from "../services/user-service.js";
 
 // Import User's API Controllers Methods
-import * as userAPI  from "../controller/userCtl.js";
+import * as userAPI  from "../controller/user-controller.js";
 
 // Initialize Express Router
 const router = express.Router();
@@ -20,6 +20,11 @@ router.get("/", (req, res) => {
 // // Home Page
 // router.get('/', homePage);
 
+// Login Page
+router.get('/login', loginPage);
+
+// Register Page
+router.get('/register', registerPage);
 
 // /* ====== API's ====== */
 // Find Users Route
