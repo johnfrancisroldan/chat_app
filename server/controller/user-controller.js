@@ -7,34 +7,6 @@
 /* ====== IMPORT USER DATABASE ====== */
 import tblUser from '../model/user-model.js';
 
-// Controller: Register User 
-export const registerUser = async (req,res) =>{
-   // Validatation
-   try {
-      // Fetch newUserData for tblUser
-      const user = new tblUser({
-         first_name: req.body.first_name , 
-         last_name: req.body.last_name,
-         email: req.body.email ,
-         password: req.body.password ,
-         phone_num: req.body.phone_num ,
-         age: req.body.age ,
-         gender: req.body.gender
-      });
-
-      // Save New User Data
-      const newUser = await user.save()
-
-      res.redirect('/login');
-
-   } catch{
-      res.status(500).send({
-         message: err.message || 'Error found: Storing New user'
-      })
-
-   }
-   
-}
 
 // Controller: Find User
 export const viewUsers = (req, res) =>{

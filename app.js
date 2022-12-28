@@ -11,9 +11,6 @@ import passport from 'passport';
 import session from 'express-session';
 import flash from 'express-flash';
 
-/* ====== IMPORT CONFIGURATION ====== */
-import initializeUser from './server/config/passport-config.js';
-
 /* ====== IMPORT USER ROUTERS ====== */
 import userRoutes from "./server/routes/user-route.js";
 import userAuth from "./server/routes/userAuth-route.js";
@@ -68,6 +65,19 @@ app.use(expressEjsLayouts);
 app.use(express.static(path.join(__dirname, '/public')));
 
 
+/* ====== USER AUTHENTICATION ====== */
+// Show information message in authentication
+app.use(flash()) 
+
+// Save variables or current user data to entire page
+app.use(session({
+    secret: process.env.SESSION_KEY,  // Session key
+    resave: false,  // Resaving our variable if nothing is change?
+    saveUninitialized: false,  // Saving empty value in the session?
+}))
+
+app.use(passport.initialize());  // Initializing passport
+app.use(passport.session());  // Saves the user inside the session
 
 /* ====== PAGES ====== */
 

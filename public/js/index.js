@@ -1,3 +1,5 @@
+const BASE_URL = 'http://localhost:8080/api';
+
 // Register Form Submitted
 $("#registerForm").submit(function(e){
     alert("You successfully Register!");
@@ -21,7 +23,7 @@ $("#updateForm").submit(function(e){
 
     $.ajax({
         // Access the Update API
-        "url" : `http://localhost:8080/api/updateUser/${data.id}`,
+        "url" : `${BASE_URL}/updateUser/${data.id}`,
         "method" : "PUT",
         "data" : data,
         success: function (data) {
@@ -41,7 +43,7 @@ $( "#btnDelete" ).click(function() {
     if(confirm("You want to delete this user?")){
         // Access the deleteUser API
         $.ajax({
-            "url" : `http://localhost:8080/api/deleteUser/${id}`,
+            "url" : `${BASE_URL}/deleteUser/${id}`,
             "method" : "DELETE",
             success: function (data) {
                 // Refresh Page
