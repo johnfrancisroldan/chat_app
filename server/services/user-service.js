@@ -8,7 +8,8 @@ import axios from 'axios';
 const baseUrl = 'http://localhost:8080';
 
 // Login page 
-export const loginPage = (req, res) =>{
+export const loginPage = (req, res) => {
+    console.log('MESSAGE: ', req.flash())
     res.render('userAuth/login');
 }
 
@@ -21,7 +22,7 @@ export const registerPage =  (req,res) =>{
 export const homePage =  (req, res) =>{
     axios.get(`${baseUrl}/api/view_user`)
         .then(function(response){
-            res.render('home',{users:response.data})
+            res.render('users/home',{users:response.data, name: req.user.first_name})
         })
         .catch(err=>{
             res.send(err)

@@ -8,9 +8,14 @@
             <div class="card ">
                 <h4 class="card-header d-flex justify-content-center">Login</h4>
                 <!-- divCardBody -->
+                <% if (messages.error) { %>
+                    <h1> <%= messages.error %> </h1>
+                <% } %> 
+                
+
                 <div class="card-body d-flex">
                     <!-- form: login Form -->
-                    <form action="javascript:void(0)" id='frmcu' enctype="multipart/form-data">
+                    <form action="/auth/login_user" method="POST" id='frmcu'>
                         <div class="container g-3">
                             <!-- Textbox: Email -->
                             <div class="row form-group d-flex flex-column">

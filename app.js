@@ -66,14 +66,16 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 
 /* ====== USER AUTHENTICATION ====== */
+
 // Show information message in authentication
-app.use(flash()) 
+app.use(flash());
 
 // Save variables or current user data to entire page
 app.use(session({
     secret: process.env.SESSION_KEY,  // Session key
     resave: false,  // Resaving our variable if nothing is change?
     saveUninitialized: false,  // Saving empty value in the session?
+    cookie: {maxAge: 1000 * 60 * 60 * 24}  // Cookie expiry time set to one day
 }))
 
 app.use(passport.initialize());  // Initializing passport

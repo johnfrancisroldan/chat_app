@@ -6,25 +6,26 @@ import { loginPage, registerPage, homePage } from "../services/user-service.js";
 // Import User's API Controllers Methods
 import * as userAPI  from "../controller/user-controller.js";
 
+// Import Passport configuration
+import { isAuthorized, isNotAuthorized } from "../config/passport-config.js";
+
 // Initialize Express Router
 const router = express.Router();
 
 
-router.get("/", (req, res) => {
-    res.render('index');
-});
 
 
 // /* ====== PAGES ====== */
 
-// // Home Page
-// router.get('/', homePage);
+// Home Page
+router.get('/', isAuthorized, homePage);
 
 // Login Page
-router.get('/login', loginPage);
+router.get('/login', isNotAuthorized, loginPage);
+
 
 // Register Page
-router.get('/register', registerPage);
+router.get('/register', isNotAuthorized, registerPage);
 
 // /* ====== API's ====== */
 // Find Users Route
