@@ -1,22 +1,23 @@
 /* ====== IMPORT MODULES / METHODS  ====== */
 import express from 'express';
 import passport from 'passport';
-import { initializeAuth , isNotAuthorized} from "../config/passport-config.js";
+import { initializeAuth } from "../config/passport-config.js";
 
 
 // Import Methods: CONTROLLER
 import * as userAuthCtl  from "../controller/user_auth-controller.js";
 
-
+// Initializing the passport-local authentication
 initializeAuth(passport);
 
+// Initialize express router
 const router = express.Router();
 
-
+// Login authentication
 router.post('/login_user', passport.authenticate('local',{
-        successRedirect: '/',
-        failureRedirect: '/login',
-        failureFlash: true,
+        successRedirect: '/',  // Redirect to the page if its success
+        failureRedirect: '/login',  // Redirect to the page if its failed
+        failureFlash: true,  // Enable failure Flash message
 })); 
 
 // Registering User route

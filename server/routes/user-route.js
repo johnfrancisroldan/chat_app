@@ -1,7 +1,7 @@
 import express from "express";   // Import Express Module
 
 // Import User Pages Services Method
-import { loginPage, registerPage, homePage } from "../services/user-service.js";
+import { loginPage, registerPage, homePage } from "../services/user_auth-service.js";
 
 // Import User's API Controllers Methods
 import * as userAPI  from "../controller/user-controller.js";

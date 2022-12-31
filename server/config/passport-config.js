@@ -1,10 +1,11 @@
+// Import needed modules/files
 import { Strategy as LocalStrategy } from 'passport-local';
 import bcrypt from 'bcrypt';
 import tblUser from '../model/user-model.js';
 
 
 export const initializeAuth = (passport) => {
-    /* Initializing User Authentication using passport module*/ 
+    /* Initializing User Authentication using passport(local) module*/ 
 
     // Checking the user email and password
     const authenticationUser =  async (username, password, done) =>{
@@ -17,7 +18,6 @@ export const initializeAuth = (passport) => {
             } else {
                  // Check if the password is match
                 if (await bcrypt.compare(password, currentUser.password)) {
-                    console.log("currentUser: ", currentUser);
                     return done(null, currentUser);
                 } else {
                     // Show message if password is incorrect
@@ -27,7 +27,6 @@ export const initializeAuth = (passport) => {
 
         } catch (err){
             // Show error message if we have error
-            console.log('ERROR: CATCH');
             return done(err);
         }
         
@@ -43,18 +42,18 @@ export const initializeAuth = (passport) => {
     // Unsaving the Current User ID in Session
     passport.deserializeUser(async (id, done) => {
         try{
-            const currentUser = await tblUser.findById(id);
+            const currentUser = await tblUser.findById(id);  // Find Current User
+
+            // Checking if user is existing
             if (currentUser == null){
-                console.log("IF IN DESER");
                 return done(null, false, {message: "Current User not found."})
             } else {
-                console.log("ELSE IN DESER");
                 return done(null, currentUser);
             }
            
             
         } catch (err){
-            console.log("PASSPORT ERR");
+            // Show error message if we have error
             return done(err);
         }
         
