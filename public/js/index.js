@@ -1,5 +1,17 @@
 const BASE_URL = 'http://localhost:8080/api';
 
+// Login Form
+$("#loginForm").submit((e) => {
+    e.preventDefault();
+    $.ajax({
+        url:`${BASE_URL}/login`,
+        method: 'POST',
+        success: (msg) => {
+            console.log('MSG: ', msg);
+        }
+    })
+})
+
 // Register Form Submitted
 $("#registerForm").submit(function(e){
     alert("You successfully Register!");

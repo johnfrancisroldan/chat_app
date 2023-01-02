@@ -13,7 +13,7 @@ import flash from 'express-flash';
 
 /* ====== IMPORT USER ROUTERS ====== */
 import userRoutes from "./server/routes/user-route.js";
-import userAuth from "./server/routes/userAuth-route.js";
+import userAuth from "./server/routes/user_auth-route.js";
 
 /* ====== IMPORT MONGODB CONNECTION ====== */
 import connectDB from './server/database/connection.js';

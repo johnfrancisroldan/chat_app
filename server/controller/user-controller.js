@@ -8,17 +8,21 @@
 import tblUser from '../model/user-model.js';
 
 
+
 // Controller: Find User
-export const viewUsers = (req, res) =>{
+export const viewUsers = async (req, res) =>{
    // Fetch all users
-   tblUser
-      .find()
-      .then(data =>{
-         res.send(data);
-      })
-      .catch(err=>{
-         res.status(500).send({message: err.message || 'Error found: Find User'});
-      })
+   try{
+      const data = await tblUser.find();
+      if (data){
+         return res.send(data);
+      }
+      
+      return res.send({message: 'USER NOT EXISTING'})
+
+   }catch(err){
+      return res.status(500).send({message: err.message || 'Error found: Find User'});
+   }
 };
 
 

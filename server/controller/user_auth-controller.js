@@ -1,13 +1,17 @@
 // Import Modules
-import passport from "passport";
 import tblUser from "../model/user-model.js";
 import bcrypt from "bcrypt";
 
 
 
-// Controller: Login User
-export const loginUser = (req, res) => {
-   req.status(200);
+// Controller: Login Auth
+export const loginAuth = (req, res) => {
+    // console.log('MESSAGE: ', req.flash('error'));
+    if (req.flash('error')){
+        return res.send(req.flash());
+    }
+    res.redirect('/login');
+    
 
 }
 

@@ -13,12 +13,16 @@ initializeAuth(passport);
 // Initialize express router
 const router = express.Router();
 
-// Login authentication
+// Login Authentication
 router.post('/login_user', passport.authenticate('local',{
         successRedirect: '/',  // Redirect to the page if its success
         failureRedirect: '/login',  // Redirect to the page if its failed
         failureFlash: true,  // Enable failure Flash message
 })); 
+
+
+// Login Authentication message
+// router.get('/login_auth', userAuthCtl.loginAuth);
 
 // Registering User route
 router.post('/register_user', userAuthCtl.registerUser);

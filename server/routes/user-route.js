@@ -1,7 +1,10 @@
 import express from "express";   // Import Express Module
 
+// Import User authentication Pages Services Method
+import { loginPage, registerPage } from "../services/user_auth-service.js";
+
 // Import User Pages Services Method
-import { loginPage, registerPage, homePage } from "../services/user_auth-service.js";
+import { homePage } from "../services/user-service.js";
 
 // Import User's API Controllers Methods
 import * as userAPI  from "../controller/user-controller.js";
@@ -34,7 +37,7 @@ router.get('/api/view_user', userAPI.viewUsers);
 // // Update Users Route
 // router.put('/api/updateUser/:id', userAPI.updateUser);
 
-// // Delete Users Route
+// Delete Users Route
 // router.delete('/api/deleteUser/:id', userAPI.deleteUser);
 
 
