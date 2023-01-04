@@ -1,16 +1,18 @@
-const BASE_URL = 'http://localhost:8080/api';
+const BASE_URL = 'http://localhost:8080';
 
 // Login Form
-$("#loginForm").submit((e) => {
-    e.preventDefault();
-    $.ajax({
-        url:`${BASE_URL}/login`,
-        method: 'POST',
-        success: (msg) => {
-            console.log('MSG: ', msg);
-        }
-    })
-})
+// $("#loginForm").submit((e) => {
+//     console.log('LOGIN')
+//     e.preventDefault();
+//     $.ajax({
+//         url:`${BASE_URL}/auth/login_auth`,
+//         method: 'GET',
+//         success: (msg) => {
+//             console.log('MSG: ', msg);
+            
+//         }
+//     })
+// })
 
 // Register Form Submitted
 $("#registerForm").submit(function(e){

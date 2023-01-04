@@ -5,11 +5,30 @@ import bcrypt from "bcrypt";
 
 
 // Controller: Login Auth
-export const loginAuth = (req, res) => {
-    // console.log('MESSAGE: ', req.flash('error'));
-    if (req.flash('error')){
-        return res.send(req.flash());
+export const loginAuth = async (req, res) => {
+    // try{
+    //     const response = await axios.get(`${BASE_URL}/login`)
+    //     const msg = req.flash('error');
+    //     const form = {
+    //         email : req.body.email,
+    //         password : req.body.email,
+    //     }
+    //     console.log('form: ', form);
+    //     console.log('MESSAGE: ', msg);
+    //     console.log('MAY LAMAN: ', msg.lenght !== 0);
+    //     res.render('/login');
+    // } catch(err){
+    //     res.send(err)
+    // }
+
+    const msg = req.flash('error');
+    const form = {
+        email : req.body.email,
+        password : req.body.email,
     }
+    console.log('form: ', form);
+    console.log('MESSAGE: ', msg);
+    console.log('MAY LAMAN: ', msg.lenght !== 0);
     res.redirect('/login');
     
 
