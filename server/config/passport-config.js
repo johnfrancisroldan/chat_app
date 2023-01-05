@@ -27,6 +27,7 @@ export const initializeAuth = (passport) => {
 
         } catch (err){
             // Show error message if we have error
+            // Create  a error message page 
             return done(err);
         }
         

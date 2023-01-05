@@ -1,18 +1,30 @@
 const BASE_URL = 'http://localhost:8080';
 
 // Login Form
-// $("#loginForm").submit((e) => {
-//     console.log('LOGIN')
-//     e.preventDefault();
-//     $.ajax({
-//         url:`${BASE_URL}/auth/login_auth`,
-//         method: 'GET',
-//         success: (msg) => {
-//             console.log('MSG: ', msg);
-            
-//         }
-//     })
-// })
+$("#loginForm").submit((e) => {
+    console.log('LOGIN')
+    e.preventDefault();
+    $.ajax({
+        url: `${BASE_URL}/auth/login_user`,
+        type: 'POST',
+        data: {
+          email: $('#txtEmail').val(),
+          password: $('#txtPass').val()
+        },
+        success: (response) => {
+          if (response.success) {
+            // display success message
+            // $('#flash-message').text(response.message).addClass('success').fadeIn().delay(3000).fadeOut();
+            console.log('success MSG',response.message)
+          } else {
+            // display error message
+            // $('#flash-message').text(response.message).addClass('error').fadeIn().delay(3000).fadeOut();
+            console.log('error MSG',response.message)
+          }
+        }
+      });
+      
+})
 
 // Register Form Submitted
 $("#registerForm").submit(function(e){

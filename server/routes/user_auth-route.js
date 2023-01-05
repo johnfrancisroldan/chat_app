@@ -12,19 +12,26 @@ initializeAuth(passport);
 
 // Initialize express router
 const router = express.Router();
-
+// successRedirect: '/',  // Redirect to the page if its success
+//         failureRedirect: '/login',  // Redirect to the page if its failed
+//         failureFlash: true,  // Enable failure Flash message
 // Login Authentication
-router.post('/login_user', passport.authenticate('local', function(err, user, info)
-        // successRedirect: '/',  // Redirect to the page if its success
-        // failureRedirect: '/login',  // Redirect to the page if its failed
-        // failureFlash: true,  // Enable failure Flash message
-{
-        // STOP HERE: Customize the redirection of the pages in passport
-        console.log('err', err);
-        console.log('user',user);
-        console.log('info',info);
-
-}))
+router.post('/login_user', (req, res, next) => {
+        passport.authenticate('local', (err, user, info) => {
+                console.log('err: ', err);
+                console.log('user: ', user);
+                console.log('info: ', info);
+                if (err) { return next(err); }
+                if (!user) {
+                        req.flash('error', info.message);
+                        return res.json({ success: false, message: req.flash('error') });
+                }
+                req.logIn(user, (err) => {
+                        if (err) { return next(err); }
+                        return res.json({ success: true, message: 'Login successful' });
+                });
+        })(req, res, next);
+});
 
 
 // Login Authentication message

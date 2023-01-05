@@ -9,10 +9,7 @@ export const loginAuth = async (req, res) => {
     // try{
     //     const response = await axios.get(`${BASE_URL}/login`)
     //     const msg = req.flash('error');
-    //     const form = {
-    //         email : req.body.email,
-    //         password : req.body.email,
-    //     }
+    //     
     //     console.log('form: ', form);
     //     console.log('MESSAGE: ', msg);
     //     console.log('MAY LAMAN: ', msg.lenght !== 0);
